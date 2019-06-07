@@ -25,10 +25,17 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                dir('/var/lib/jenkins/workspace/Perl-Ranjeet_master/Perl/') {
-                   sh 'cp -p test.pl /home/ranjeet/Perl_Project'
-                   sh 'cp -p hello.pl /home/ranjeet/Perl_Project'
-                }
+                //dir('/var/lib/jenkins/workspace/Perl-Ranjeet_master/Perl/') {
+                //   sh 'cp -p test.pl /home/ranjeet/Perl_Project'
+                //   sh 'cp -p hello.pl /home/ranjeet/Perl_Project'
+                //}
+		script {
+            		fileOperations([
+                    		folderCopyOperation(
+                            		destinationFolderPath: '/home/ranjeet/Perl_Project/',
+                            		sourceFolderPath: '/var/lib/jenkins/workspace/Perl-Ranjeet_master/Perl/')
+            		])
+        	}
                 echo 'Finished'
             }
         }

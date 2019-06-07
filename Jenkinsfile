@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh "rm -rf Perl"
+                sh "rm -rf Perl-Ranjeet*"
                 sh "git clone https://github.com/donfir/Perl.git"
             }
         }
         stage ('Compile Stage') {
             steps {
-                dir('/var/lib/jenkins/workspace/Perl2/Perl/') {
+                dir('/var/lib/jenkins/workspace/Perl-Ranjeet_master/Perl/') {
                    sh 'perl -c test.pl'
 		   sh 'perl -c hello.pl'
                 }

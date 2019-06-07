@@ -29,12 +29,21 @@ pipeline {
                 //   sh 'cp -p test.pl /home/ranjeet/Perl_Project'
                 //   sh 'cp -p hello.pl /home/ranjeet/Perl_Project'
                 //}
-		script {
-            		fileOperations([
-                    		folderCopyOperation(
-                            		destinationFolderPath: '/home/ranjeet/Perl_Project/',
-                            		sourceFolderPath: '/var/lib/jenkins/workspace/Perl-Ranjeet_master/Perl/')
-            		])
+		fileOperations {
+            		//fileCreateOperation(String fileName, String fileContent)
+            		fileCopyOperation(*.pl, , /home/ranjeet/Perl_Project, )
+            		//fileDeleteOperation(String includes, String excludes)
+            		//fileDownloadOperation(String url, String userName, String password, String targetLocation, String targetFileName)
+            		//fileJoinOperation(String sourceFile, String targetFile)
+            		//filePropertiesToJsonOperation(String sourceFile, String targetFile)
+            		//fileTransformOperation(String includes, String excludes)
+            		//fileUnTarOperation(String filePath, String targetLocation, boolean isGZIP)
+            		//fileUnZipOperation(String filePath, String targetLocation)
+            		//folderCopyOperation(String sourceFolderPath, String destinationFolderPath)
+            		//folderCreateOperation(String folderPath)
+            		//folderDeleteOperation(String folderPath)
+            		//fileRenameOperation(String source, String destination)
+            		//folderRenameOperation(String source, String destination)
         	}
                 echo 'Finished'
             }

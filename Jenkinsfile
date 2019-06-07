@@ -12,6 +12,7 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Perl2/Perl/') {
                    sh 'perl -c test.pl'
+		   sh 'perl -c hello.pl'
                 }
                 echo 'Compile Stage'
             }

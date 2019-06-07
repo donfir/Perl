@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh "rm -rf Perl-Ranjeet*"
+                //sh "rm -rf Perl-Ranjeet*"
                 sh "git clone https://github.com/donfir/Perl.git"
             }
         }
